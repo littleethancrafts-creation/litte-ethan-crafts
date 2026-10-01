@@ -24,7 +24,7 @@ body {
     var(--cream);
   line-height: 1.55;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
@@ -143,9 +143,18 @@ h3 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.03em; }
   box-shadow: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
-.hero-photo img, .frame img { width: 100%; border-radius: 20px; object-fit: cover; }
-.hero-photo img { aspect-ratio: 4 / 5; max-height: 640px; }
-.hero-photo img.is-poster, .frame img.is-poster { object-fit: contain; background: #f4efe6; }
+.hero-photo img, .frame img { width: 100%; height: auto; border-radius: 20px; object-fit: cover; }
+.hero-photo img { aspect-ratio: 4 / 5; max-height: 640px; object-fit: cover; }
+.hero-photo img.is-poster, .frame img.is-poster {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #f4efe6;
+}
+.rate-grid { align-items: start; }
+.rate-grid .frame { margin: 0; }
 .caption { margin: 10px 8px 4px; color: var(--muted); font-size: 0.9rem; }
 
 .marquee {
@@ -185,7 +194,7 @@ h3 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.03em; }
   border-radius: 26px;
   overflow: hidden;
 }
-.package img { width: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #fffaf6; }
+.package img { width: 100%; height: 240px; aspect-ratio: auto; object-fit: cover; object-position: center top; background: #fffaf6; }
 .package-body, .card-body, .step { padding: 16px 16px 18px; }
 .step { padding: 22px; }
 .price { margin: 12px 0 0; font-size: 1.35rem; font-weight: 750; letter-spacing: -0.03em; color: var(--blue-deep); }
@@ -308,6 +317,8 @@ h3 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.03em; }
   .section-head, .footer-bottom { flex-direction: column; align-items: flex-start; }
   .brand img { height: 68px; }
   .hero-photo img { aspect-ratio: 4 / 3; max-height: none; }
+  .hero-photo img.is-poster, .frame img.is-poster { aspect-ratio: auto; height: auto; }
+  .package img { height: 200px; }
   .quote, .sky-band { padding: 22px; border-radius: 22px; }
   .wrap { width: min(var(--max), calc(100% - 28px)); }
 }
