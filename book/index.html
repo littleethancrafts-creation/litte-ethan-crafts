@@ -40,6 +40,7 @@
       "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#website",
       "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/",
       "name": "Little Ethan Craft",
+      "alternateName": "Little Ethan Crafts",
       "description": "Souvenirs for every special moment. Onsite charm booth from Taguig.",
       "publisher": {
         "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
@@ -47,15 +48,34 @@
       "inLanguage": "en-PH"
     },
     {
-      "@type": "LocalBusiness",
+      "@type": [
+        "LocalBusiness",
+        "CraftStore"
+      ],
       "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business",
       "name": "Little Ethan Craft",
       "alternateName": "Little Ethan Crafts",
       "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/",
-      "image": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/booth-team.png",
-      "logo": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/logo-mark.png",
-      "description": "Onsite charm booth in Taguig. Guests choose Loop, Leather, or Paracord keychains and take home a keepsake from birthdays, weddings, corporate events, and parties.",
+      "image": [
+        "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/feature-package.png",
+        "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/pricelist.png",
+        "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/booth-team.png",
+        "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/logo-mark.png"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#logo",
+        "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/logo-mark.png",
+        "contentUrl": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/logo-mark.png",
+        "width": 630,
+        "height": 562,
+        "caption": "Little Ethan Craft"
+      },
+      "description": "Onsite charm booth in Taguig. Guests choose Loop, Paracord, and Leather keychains and take home a keepsake from birthdays, weddings, corporate events, and parties.",
       "slogan": "Souvenirs for every special moment",
+      "telephone": "+639915718212",
+      "priceRange": "₱1,800–₱9,999",
+      "currenciesAccepted": "PHP",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Taguig",
@@ -76,78 +96,296 @@
           "name": "Philippines"
         }
       ],
+      "hasMap": "https://www.google.com/maps/place/Little+Ethan+Crafts/data=!4m2!3m1!1s0x0:0xb1b95020766d6416",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+639915718212",
+        "contactType": "reservations",
+        "areaServed": "PH",
+        "availableLanguage": "English",
+        "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/book/"
+      },
       "sameAs": [
+        "https://share.google/QE42i6pPFycy0CnGF",
+        "https://www.google.com/maps/place/Little+Ethan+Crafts/data=!4m2!3m1!1s0x0:0xb1b95020766d6416",
         "https://www.facebook.com/LittleEthanCrafts",
         "https://www.instagram.com/littleethancrafts/"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Charm booth keychain packages",
+        "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#catalog",
+        "name": "Onsite Charm Booth package pricelist",
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "Loop keychain",
-            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-30",
+            "name": "Loop + Paracord, 30 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-30",
+            "price": "2400",
             "priceCurrency": "PHP",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": "1800",
-              "priceCurrency": "PHP"
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 30,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
             }
           },
           {
             "@type": "Offer",
-            "name": "Leather keychain",
-            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-50",
+            "name": "Loop + Paracord, 50 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-50",
+            "price": "3999",
             "priceCurrency": "PHP",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": "3800",
-              "priceCurrency": "PHP"
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 50,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
             }
           },
           {
             "@type": "Offer",
-            "name": "Paracord keychain",
-            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-75",
+            "name": "Loop + Paracord, 75 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-75",
+            "price": "6000",
             "priceCurrency": "PHP",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": "3200",
-              "priceCurrency": "PHP"
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 75,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
             }
           },
           {
             "@type": "Offer",
-            "name": "Onsite charm booth",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-100",
+            "name": "Loop + Paracord, 100 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#loop-paracord-100",
+            "price": "7999",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 100,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-30",
+            "name": "Paracord + Leather, 30 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-30",
+            "price": "3300",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 30,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-50",
+            "name": "Paracord + Leather, 50 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-50",
+            "price": "5000",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 50,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-75",
+            "name": "Paracord + Leather, 75 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-75",
+            "price": "7700",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 75,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-100",
+            "name": "Paracord + Leather, 100 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#paracord-leather-100",
+            "price": "9999",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 100,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-30",
+            "name": "Leather + Loop, 30 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-30",
+            "price": "2700",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 30,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-50",
+            "name": "Leather + Loop, 50 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-50",
+            "price": "4499",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 50,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-75",
+            "name": "Leather + Loop, 75 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-75",
+            "price": "6750",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 75,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-100",
+            "name": "Leather + Loop, 100 pax",
+            "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/packages/#leather-loop-100",
+            "price": "8999",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 100,
+              "unitText": "pax"
+            },
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/booth/#from-1800",
+            "name": "Onsite charm booth, packages start at 1800 php",
             "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/booth/",
+            "price": "1800",
             "priceCurrency": "PHP",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": "1800",
-              "priceCurrency": "PHP"
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
             }
           }
         ]
       }
     },
     {
-      "@type": "WebPage",
+      "@type": [
+        "WebPage",
+        "ContactPage"
+      ],
       "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/book/#webpage",
       "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/book/",
       "name": "Book a Charm Booth | Little Ethan Craft",
-      "description": "Send a message to book the Little Ethan Craft charm booth for your next event. A minimal transportation fee applies, depending on location.",
+      "description": "Send a message to book the Little Ethan Craft charm booth. Call 0991 571 8212. A minimal transport fee applies depending on location.",
       "isPartOf": {
         "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#website"
       },
       "about": {
         "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
       },
+      "breadcrumb": {
+        "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/book/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/booth-team.png",
+        "contentUrl": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/booth-team.png",
+        "width": 417,
+        "height": 313,
+        "caption": "Little Ethan Craft team at the charm booth"
+      },
       "inLanguage": "en-PH",
-      "primaryImageOfPage": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/images/booth-team.png"
+      "dateModified": "2026-10-01"
+    },
+    {
+      "@type": "ReserveAction",
+      "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/book/#reserve",
+      "name": "Book the charm booth",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/book/",
+        "actionPlatform": [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform"
+        ]
+      },
+      "object": {
+        "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/booth/#service"
+      },
+      "agent": {
+        "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/#business"
+      }
     },
     {
       "@type": "BreadcrumbList",
+      "@id": "https://littleethancrafts-creation.github.io/litte-ethan-crafts/book/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -176,7 +414,7 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="announce"><p>Souvenirs for every special moment · Taguig · <a href="https://www.facebook.com/LittleEthanCrafts" target="_blank" rel="noopener">Facebook</a></p></div>
+    <div class="announce"><p>Souvenirs for every special moment · Taguig · <a href="tel:+639915718212">0991 571 8212</a> · <a href="https://share.google/QE42i6pPFycy0CnGF" target="_blank" rel="noopener">Google</a> · <a href="https://www.facebook.com/LittleEthanCrafts" target="_blank" rel="noopener">Facebook</a></p></div>
     <div class="nav-bar">
       <div class="wrap nav-inner">
         <a class="brand" href="/litte-ethan-crafts/"><img src="/litte-ethan-crafts/images/logo-mark.png" alt="Little Ethan Craft"></a>
@@ -281,6 +519,8 @@
       </div>
       <div>
         <h2>Find us</h2>
+        <a href="https://share.google/QE42i6pPFycy0CnGF" target="_blank" rel="noopener">Google Business</a>
+        <a href="tel:+639915718212">0991 571 8212</a>
         <a href="https://www.facebook.com/LittleEthanCrafts" target="_blank" rel="noopener">Facebook · Little Ethan Crafts</a>
         <a href="https://www.instagram.com/littleethancrafts/" target="_blank" rel="noopener">Instagram · @littleethancrafts</a>
         <p>Taguig · Message to book</p>
