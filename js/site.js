@@ -11,7 +11,7 @@
   const params = new URLSearchParams(location.search);
   const picked = params.get("package");
   const styleParam = params.get("style");
-  const select = document.querySelector("#package");
+  const onsiteSelect = document.querySelector("#onsite");
   const boothField = document.querySelector("#booth-package-field");
   const boothSelect = document.querySelector("#booth-package");
   const boothStyles = [
@@ -33,33 +33,23 @@
   }
 
   function syncBoothPackage() {
-    if (!select || !boothField || !boothSelect) return;
-    const onsite = select.value.toLowerCase() === "onsite charm booth";
+    if (!onsiteSelect || !boothField || !boothSelect) return;
+    const onsite = onsiteSelect.value.toLowerCase() === "onsite charm booth";
     boothField.hidden = !onsite;
+    boothField.classList.toggle("is-off", !onsite);
     boothSelect.required = onsite;
+    boothSelect.disabled = !onsite;
     if (!onsite) boothSelect.value = "";
   }
 
-  if (select && picked) {
-    const styleFromPackage = matchStyle(picked);
-    if (picked.toLowerCase() === "onsite charm booth" || styleFromPackage) {
-      select.value = "Onsite Charm Booth";
-      if (styleFromPackage) boothSelect.value = styleFromPackage;
-    } else {
-      Array.from(select.options).forEach(function (option) {
-        if (option.value === picked) select.value = picked;
-      });
-    }
-  }
-
-  if (select && boothSelect) {
-    const stylePick = matchStyle(styleParam);
-    if (stylePick) {
-      select.value = "Onsite Charm Booth";
-      boothSelect.value = stylePick;
+  if (onsiteSelect && boothSelect) {
+    const stylePick = matchStyle(styleParam) || matchStyle(picked);
+    if ((picked && picked.toLowerCase() === "onsite charm booth") || stylePick) {
+      onsiteSelect.value = "Onsite Charm Booth";
+      if (stylePick) boothSelect.value = stylePick;
     }
     syncBoothPackage();
-    select.addEventListener("change", syncBoothPackage);
+    onsiteSelect.addEventListener("change", syncBoothPackage);
   }
 
   document.querySelectorAll("form[data-book]").forEach(function (form) {
@@ -70,16 +60,14 @@
         return;
       }
       const data = new FormData(form);
-      const packageLine = data.get("boothPackage")
-        ? data.get("package") + " — " + data.get("boothPackage")
-        : data.get("package");
       const message = [
         "Hi Little Ethan Craft! I would like to book a souvenir booth.",
         "Name: " + data.get("name"),
         "Event: " + data.get("event"),
         "Date: " + data.get("date"),
         "Location: " + data.get("location"),
-        "Package: " + packageLine,
+        "Onsite: " + data.get("onsite"),
+        "Package: " + data.get("package"),
         "Guests: " + data.get("guests"),
         "Note: " + (data.get("note") || "None")
       ].join("\n");
