@@ -9,11 +9,8 @@
   }
 
   const params = new URLSearchParams(location.search);
-  const picked = params.get("package");
-  const styleParam = params.get("style");
-  const onsiteSelect = document.querySelector("#onsite");
-  const boothField = document.querySelector("#booth-package-field");
-  const boothSelect = document.querySelector("#booth-package");
+  const picked = params.get("style") || params.get("package");
+  const packageSelect = document.querySelector("#package");
   const boothStyles = [
     "Loop Keychain",
     "Paracord Keychain",
@@ -24,32 +21,11 @@
     "Clickers"
   ];
 
-  function matchStyle(value) {
-    if (!value) return "";
-    const found = boothStyles.find(function (style) {
-      return style.toLowerCase() === value.toLowerCase();
+  if (packageSelect && picked) {
+    const match = boothStyles.find(function (style) {
+      return style.toLowerCase() === picked.toLowerCase();
     });
-    return found || "";
-  }
-
-  function syncBoothPackage() {
-    if (!onsiteSelect || !boothField || !boothSelect) return;
-    const onsite = onsiteSelect.value.toLowerCase() === "onsite charm booth";
-    boothField.hidden = !onsite;
-    boothField.classList.toggle("is-off", !onsite);
-    boothSelect.required = onsite;
-    boothSelect.disabled = !onsite;
-    if (!onsite) boothSelect.value = "";
-  }
-
-  if (onsiteSelect && boothSelect) {
-    const stylePick = matchStyle(styleParam) || matchStyle(picked);
-    if ((picked && picked.toLowerCase() === "onsite charm booth") || stylePick) {
-      onsiteSelect.value = "Onsite Charm Booth";
-      if (stylePick) boothSelect.value = stylePick;
-    }
-    syncBoothPackage();
-    onsiteSelect.addEventListener("change", syncBoothPackage);
+    if (match) packageSelect.value = match;
   }
 
   document.querySelectorAll("form[data-book]").forEach(function (form) {
@@ -66,8 +42,7 @@
         "Event: " + data.get("event"),
         "Date: " + data.get("date"),
         "Location: " + data.get("location"),
-        "Onsite: " + data.get("onsite"),
-        "Package: " + data.get("package"),
+        "Onsite Charm Booth: " + data.get("package"),
         "Guests: " + data.get("guests"),
         "Note: " + (data.get("note") || "None")
       ].join("\n");
