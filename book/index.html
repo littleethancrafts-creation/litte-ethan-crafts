@@ -208,7 +208,7 @@
           <ul class="chips">
             <li>Event type</li>
             <li>Date</li>
-            <li>City</li>
+            <li>Location</li>
             <li>Style</li>
             <li>Guest count</li>
           </ul>
@@ -234,18 +234,30 @@
             <label class="field">Date
               <input name="date" type="date" required>
             </label>
-            <label class="field">City
-              <input name="city" required placeholder="Taguig">
+            <label class="field">Location
+              <input name="location" required placeholder="Venue or city">
             </label>
             <label class="field">Package
               <select id="package" name="package" required>
                 <option value="">Choose a style</option>
-                <option>Onsite charm booth</option>
+                <option value="Onsite Charm Booth">Onsite Charm Booth</option>
                 <option>Loop keychain</option>
                 <option>Leather keychain</option>
                 <option>Paracord keychain</option>
                 <option>Clickers</option>
                 <option>Not sure yet</option>
+              </select>
+            </label>
+            <label class="field" id="booth-package-field" hidden>Which package
+              <select id="booth-package" name="boothPackage">
+                <option value="">Choose a package</option>
+                <option>Loop Keychain</option>
+                <option>Paracord Keychain</option>
+                <option>Leather Keychain</option>
+                <option>Loop + Paracord</option>
+                <option>Paracord + Leather</option>
+                <option>Leather + Loop</option>
+                <option>Clickers</option>
               </select>
             </label>
             <label class="field">About how many guests

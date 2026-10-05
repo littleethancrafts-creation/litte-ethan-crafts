@@ -250,6 +250,7 @@ h3 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.03em; }
 .form { display: grid; gap: 12px; }
 .form[hidden] { display: none; }
 .field { display: grid; gap: 6px; font-weight: 700; font-size: 0.92rem; }
+.field[hidden] { display: none !important; }
 .field input, .field select, .field textarea {
   width: 100%;
   border: 1px solid var(--line);
